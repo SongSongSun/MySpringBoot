@@ -1,7 +1,8 @@
 package com.learn.song.myspringboot.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.learn.song.myspringboot.entity.domain.User;
+import com.learn.song.myspringboot.orm.context.DynamicTableContext;
+import com.learn.song.myspringboot.entity.User;
 import com.learn.song.myspringboot.service.UserService;
 import com.learn.song.myspringboot.mapper.UserMapper;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void addUser(User user) {
+        DynamicTableContext.setTableIndex(12312L);
         this.save(user);
-        modifyUser(user);
+        //modifyUser(user);
     }
 
     @Override

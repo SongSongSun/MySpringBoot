@@ -1,13 +1,15 @@
 package com.learn.song.myspringboot.service.impl;
 
-import com.learn.song.myspringboot.entity.domain.User;
+import com.learn.song.myspringboot.orm.context.DynamicTableContext;
+import com.learn.song.myspringboot.entity.User;
 import com.learn.song.myspringboot.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.Assert;
 
 import javax.annotation.Resource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
 
 /**
  * @author yijinsong@lingxing.com
@@ -21,9 +23,16 @@ class UserServiceImplTest {
     @Test
     void testAddUser() {
         User user = new User();
-        user.setName("B");
+        user.setName("A");
         user.setAge(60);
         user.setEmail("test1@qq.com");
         userService.addUser(user);
+    }
+
+    @Test
+    void testSelect() {
+        DynamicTableContext.setTableIndex(12312L);
+        List<User> list = userService.list();
+        Assert.notEmpty(list, "查询结果为空");
     }
 }

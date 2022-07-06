@@ -1,4 +1,4 @@
-package com.learn.song.myspringboot.entity.domain;
+package com.learn.song.myspringboot.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -7,16 +7,12 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 /**
  * @author Song
  */
 @TableName(value = "user")
-@Data
-@NoArgsConstructor
 public class User implements Serializable {
     /**
      * 主键ID
@@ -41,4 +37,37 @@ public class User implements Serializable {
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }

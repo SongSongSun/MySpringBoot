@@ -2,7 +2,7 @@ package com.learn.song.myspringboot.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.learn.song.myspringboot.entity.domain.User;
+import com.learn.song.myspringboot.entity.User;
 
 /**
  * @author Song

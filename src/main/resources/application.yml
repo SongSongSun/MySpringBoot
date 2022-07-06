@@ -2,16 +2,14 @@ spring:
   application:
     name: my-spring-boot
   datasource:
-    druid:
-      db-type: mysql
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false
-      username: root
-      password: 123456
-      initial-size: 10
-      maxActive: 100
-      minIdle: 10
-      maxWait: 6000
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false
+    username: root
+    password: 123456
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
 
 mybatis-plus:
   configuration:
