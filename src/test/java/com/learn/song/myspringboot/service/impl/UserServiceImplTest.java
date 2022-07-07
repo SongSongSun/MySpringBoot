@@ -31,7 +31,7 @@ class UserServiceImplTest {
 
     @Test
     void testSelect() {
-        DynamicTableContext.setTableIndex(12312L);
+        DynamicTableContext.setTableIndexByCompanyId(12312L);
         List<User> list = userService.list();
         Assert.notEmpty(list, "查询结果为空");
     }

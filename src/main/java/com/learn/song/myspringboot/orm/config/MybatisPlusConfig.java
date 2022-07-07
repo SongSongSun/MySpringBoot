@@ -16,7 +16,6 @@ import javax.annotation.Resource;
  * @Description
  */
 @Configuration
-@MapperScan("com.baomidou.mybatisplus.samples.dytablename.mapper")
 public class MybatisPlusConfig {
     @Resource
     private SongTableNameHandler songTableNameHandler;

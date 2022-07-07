@@ -19,7 +19,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void addUser(User user) {
-        DynamicTableContext.setTableIndex(12312L);
+        DynamicTableContext.setTableIndexByCompanyId(12312L);
         this.save(user);
         //modifyUser(user);
     }

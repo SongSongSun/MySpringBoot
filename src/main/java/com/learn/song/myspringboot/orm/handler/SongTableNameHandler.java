@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.extension.plugins.handler.TableNameHandler;
 import com.learn.song.myspringboot.orm.context.DynamicTableContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import org.springframework.util.Assert;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,7 +26,6 @@ public class SongTableNameHandler implements TableNameHandler {
         log.info("拦截前的sql:{}", sql);
         if (handleTableNameList.contains(tableName)) {
             Integer tableIndex = DynamicTableContext.getTableIndex();
-            Assert.notNull(tableIndex, "动态表未传入分表index");
             return StrUtil.join(StrPool.UNDERLINE, tableName, tableIndex);
         } else {
             return tableName;
